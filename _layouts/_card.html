@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% capture the_collection %}{{page.collection}}{% endcapture %}
+{% if page.collection %}
+    {% assign  document = site[the_collection] | sort : "files" %}
+{% endif %}
+
+{% assign maxidx = document.size | minus: 1 %}
+{% assign prevurl = false %}
+{% assign nexturl = false %}
+
+
+{% for links in document %}
+{% if links.url == page.url %}
+	{% assign idx = forloop.index0 %}
+	{% break %}
+{% endif %}
+{% endfor %} 
+
+{% if idx > 0 %}
+	{% assign previdx = idx | minus: 1 %}
+	{% assign prevurl = document[previdx].url %}
+{% endif %} 
+
+{% if idx < maxidx %}
+	{% assign nextidx = idx | plus: 1 %}
+	{% assign nexturl = document[nextidx].url %}
+{% endif %} 
+
+{% if prevurl or nexturl %}
+<div class="pagination">
+    {% if prevurl %}<a href="{{prevurl}}" class="prev"><i class="fa fa-angle-left"></i>Prev</a>{% endif %}                    
+    {% if nexturl %}<a href="{{nexturl}}" class="next">Next<i class="fa fa-angle-right"></i></a>{% endif %}
+</div>
+{% endif %} 
+
+
+<!-- <div class="cards"> -->
+		<article class="card">
+			<header>
+				<h2>{{ page.title }}</h2>
+			</header>    
+			<img src="{{ page.cover }}" alt="">
+			<section><span>Publication Year : </span> <br>{{ page.pubyr }}</section>
+			<section><span>Editor : </span><br>{{ page.editor }}</section>
+			<section><span>Contributor : </span><br>{{ page.contrib }}</section>
+		</article>			
+<!-- </div> -->

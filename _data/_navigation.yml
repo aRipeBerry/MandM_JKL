@@ -1,0 +1,9 @@
+- name: Master & Margarita
+  link: /1_MandM.html
+- name: Staff
+  link: /2_staff.html
+- name: Links
+  link: /3_links.html
+- name: About
+  link: /about.markdown
+

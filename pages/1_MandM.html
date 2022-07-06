@@ -1,0 +1,61 @@
+---
+layout: default
+title: Master & Margarita
+permalink: /MandM/
+---
+
+
+{% assign card_collections = site.collections | where: "type", "card" %}
+
+<!-- 
+{{ site.collections | where: "type", "card" | first }}
+ -->
+
+<blockquote>
+    Below a list of the <span id="itemCnt"></span> items in my One-book collection of this <a
+        href="https://en.wikipedia.org/wiki/The_Master_and_Margarita" target="_blank"> masterpiece </a>.
+    <p>
+        If by any chance you'd find a version not listed below, please don't hesitate to take, buy<strike>,
+            steal</strike>
+        it for me.
+        <p>   
+            I'd be grateful...
+        </p>
+    </p>
+</blockquote>
+
+<blockquote>
+    Ci-dessous la liste des <span id="itemCnt"></span> éléments de ma collection d'Un-livre de ce  <a
+        href="https://fr.wikipedia.org/wiki/Le_Maitre_Et_Marguerite" target="_blank"> chef-d'oeuvre</a>.
+    <p>
+        Si par hasard vous tombez sur un exemplaire qui ne s'y trouve pas, n'hésitez pas à le prendre, l'acheter<strike>, le
+            voler</strike> pour moi.
+        <p>   
+            Je vous en serai reconnaissant ...
+        </p>
+        
+    </p>
+</blockquote>
+
+
+
+{% for card_coll in card_collections %}
+<p class="icon"><span><img src="{{ card_coll.icon }}" alt=""> </span> {{ card_coll.title | capitalize}} </p>
+{% include cards_ov.html %}
+{% endfor %}
+
+<script src="../assets/js/MandM.js"></script>
+
+
+<!--
+{% for coll in site.collections %}
+    <div>{{ coll.label }} : {{ coll.files }}</div>
+{% endfor %}			
+
+
+
+{% for card in site.cards %}
+    <div>{{ card.relative_path }} : {{ card.lang }}</div>
+    <div>{{ card.relative_path }} : {{ card.url }}</div>
+{% endfor %}			
+-->

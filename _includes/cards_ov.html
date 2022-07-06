@@ -1,0 +1,15 @@
+{% assign coll_name = card_coll.label %}
+
+<p id="item">#items : {{ site.[coll_name].size }}</p>
+
+<div class="cards">
+	{% for one_card in site.[coll_name] %}
+		<article class="card_ov">
+<!-- 			<header>
+				<h2>{{ one_card.title }}</h2>
+			</header>    --> 
+			<a href="{{ one_card.url }} "> <img src="{{ one_card.cover }}" alt=""> </a>
+		</article>
+	{% endfor %}
+	<a id="bottom-right" href="#top">TOP</a>		
+</div>

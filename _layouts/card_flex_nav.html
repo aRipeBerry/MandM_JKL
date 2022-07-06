@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+{% capture the_collection %}{{page.collection}}{% endcapture %}
+{% if page.collection %}
+{% assign document = site[the_collection] | sort : "files" %}
+{% assign coll_metadata = site.collections | where: "label", the_collection | first %}
+{% endif %}
+
+
+{% assign maxidx = document.size | minus: 1 %}
+{% assign prevurl = false %}
+{% assign nexturl = false %}
+
+
+{% for links in document %}
+{% if links.url == page.url %}
+{% assign idx = forloop.index0 %}
+{% break %}
+{% endif %}
+{% endfor %}
+
+{% if idx > 0 %}
+{% assign previdx = idx | minus: 1 %}
+{% assign prevurl = document[previdx].url %}
+{% endif %}
+
+{% if idx < maxidx %} {% assign nextidx=idx | plus: 1 %} {% assign nexturl=document[nextidx].url %} {% endif %} <div
+    class="cardsnavwrap">
+    <img src="{{ coll_metadata.icon }}" alt="">
+    <div class="cardsnav">
+        {% if prevurl %}<a href="{{ prevurl }}">&#8249; Prev</a>{% endif %}
+        {% if nexturl %}<a href="{{ nexturl }}">Next &#8250;</a>{% endif %}
+        <a href="MandM"><strong>BACK</strong></a>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="boxwrapper">
+            <img id="cover" src="{{ page.cover }}" alt="">
+            <img id="backcover" src="{{ page.bcover }}" alt="">
+
+            <div class="textbox">
+                <div>
+                    <p class="subject">Title : </p> {{ page.title }}
+                </div>
+                <div>
+                    <p class="subject">ISBN : </p> <a href="https://worldcat.org/isbn/{{ page.isbn  }}"
+                        target="_blank">{{ page.isbn }}</a>
+                </div> <!--  link to ISBN ref. -->
+                <div>
+                    <p class="subject">Publication yr : </p> {{ page.pubyr }}
+                </div>
+                <div>
+                    <p class="subject">Publisher : </p> {{ page.editor }}
+                </div>
+                <div>
+                    <p class="subject">Aquisition : </p> {{ page.acqdt }} @ {{ page.acqplace }}
+                </div>
+                <div>
+                    <p class="subject">Contributor : </p> {{ page.contrib }}
+                </div> <!--  Colection of contributors ?  (cf. authors) -->
+            </div>
+        </div>
+    </div>

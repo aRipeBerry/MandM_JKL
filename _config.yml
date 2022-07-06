@@ -1,0 +1,161 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: A Ripe Berry
+email: pba@aripeberry.info
+description: >- # this means to ignore newlines until "baseurl:"
+  Videmecum, vois avec moi.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#header_pages: "{% include navigation.html %}"
+#twitter_username: alainpatreme
+#github_username:  aRipeBerry
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+#  - jekyll-remote-theme
+# remote_theme: pages-themes/slate@v0.2.0
+# remote_theme: "jekyll/minima"
+# minima:
+#   skin: dark
+
+collections_dir: collections
+
+collections:
+  authors:
+    output: true
+  EN:
+    type: card
+    title: The Master and Margarita
+    icon: /assets/icons/united-kingdom.png
+    output: true
+    permalink: /:title
+  FR:
+    type: card
+    title: Le Maître et Marguerite
+    icon: /assets/icons/france.png
+    output: true
+    permalink: /:title
+  DE:
+    type: card
+    title: Der Meister und Margarita
+    icon: /assets/icons/germany.png
+    output: true
+    permalink: /:title
+  ES:
+    type: card
+    title: El Maestro y Margarita
+    icon: /assets/icons/spain.png
+    output: true
+    permalink: /:title
+  IT:
+    type: card
+    title: Il Maestro e Margherita
+    icon: /assets/icons/italy.png
+    output: true
+    permalink: /:title
+  NL:
+    type: card
+    title: De Meester en Margarita
+    icon: /assets/icons/netherlands.png
+    output: true
+    permalink: /:title
+  SE:
+    type: card
+    title: Mästaren och Margarita
+    icon: /assets/icons/sweden.png
+    output: true
+    permalink: /:title
+  RU:
+    type: card
+    title: Мастер и Маргарита
+    icon: /assets/icons/russia.png
+    output: true
+    permalink: /:title
+  GR:
+    type: card
+    title: O MAITP KAI H MARГAPiTA
+    icon: /assets/icons/greece.png
+    output: true
+    permalink: /:title
+  HR:
+    type: card
+    title: Majstor & Margarita
+    icon: /assets/icons/croatia.png
+    output: true
+    permalink: /:title
+  HU:
+    type: card
+    title: A Mester és Margarita
+    icon: /assets/icons/hungary.png
+    output: true
+    permalink: /:title
+  IS:
+    type: card
+    title: Meistarinn og Margarita
+    icon: /assets/icons/iceland.png
+    output: true
+    permalink: /:title
+  JP:
+    type: card
+    title: マスターとマルガリータ
+    icon: /assets/icons/japan.png
+    output: true
+    permalink: /:title
+  PT:
+    type: card
+    title: O Mestre e Margarita
+    icon: /assets/icons/portugal.png
+    output: true
+    permalink: /:title
+  SI:
+    type: card
+    title: Majster a Margaréta
+    icon: /assets/icons/slovakia.png
+    output: true
+    permalink: /:title
+  UA:
+    type: card
+    title: Mастер и Маргарита
+    icon: /assets/icons/ukraine.png
+    output: true
+    permalink: /:title
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

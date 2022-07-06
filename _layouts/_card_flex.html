@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+
+<div class="container">
+    <div class="boxwrapper">
+        <img id="cover" src="{{ page.cover }}" alt="">
+        <img id="backcover" src="{{ page.bcover }}" alt="">
+        <div class="textbox">
+            <div><p class="subject">Title            : </p>  {{ page.title }}  </div>
+            <div><p class="subject">ISBN             : </p>  <a href="https://worldcat.org/isbn/{{ page.isbn  }}" target="_blank" >{{ page.isbn  }}</a>  </div>  <!--  link to ISBN ref. -->
+            <div><p class="subject">Publication year : </p>  {{ page.pubyr }} </div>
+            <div><p class="subject">Publisher        : </p>  {{ page.editor }}</div>
+            <div><p class="subject">Aquisition       : </p>  {{ page.acqdt }} @ {{ page.acqplace }}</div>
+            <div><p class="subject">Contributor      : </p>  {{ page.contrib }}</div>   <!--  Colection of contributors ?  (cf. authors) -->
+        </div>
+    </div>
+</div>
+
+

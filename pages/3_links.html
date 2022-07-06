@@ -1,0 +1,16 @@
+---
+layout: default
+title: Links
+permalink: /links/
+---
+<h1>{{ page.title }}</h1>
+
+<ul>
+  {% for link in site.data.links %}
+    <li>
+        <h2><a href="{{ link.url }}" target="_blank">{{ link.name }}</a><span class="smallfnt"> - {{ link.description }}</span></h2> 
+      <!-- <h3>{{ link.category }}</h3> -->
+      <!-- <p>{{ link.description | markdownify }}</p> -->
+    </li>
+  {% endfor %}
+</ul>

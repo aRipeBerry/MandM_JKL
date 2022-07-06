@@ -1,0 +1,14 @@
+- name: Jekyll
+  url: https://jekyllrb.com/
+  description: Official Jekyll SSG site
+  category: Geek stuffs
+
+- name: Dark Minima
+  url: https://github.com/songzivong/dark-minima
+  description: The source skin of this site - Thanks to them
+  category: Geek stuffs
+
+- name: ASBL Corps à Coeur
+  url: http://www.asblcoeuracorps.net/
+  description: Accompagnement et formation spécifiques pour enfants avec TDD et leurs parents.
+  category: Troubles du Dévelopement (TDD)
